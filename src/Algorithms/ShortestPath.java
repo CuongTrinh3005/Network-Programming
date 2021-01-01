@@ -107,7 +107,6 @@ public class ShortestPath {
     }
     
     public List<Position> shortestPath() {
-
         List<List<Position>> allPaths = this.getAllPaths();
 
         System.out.println("Paths found: " + allPaths.size());

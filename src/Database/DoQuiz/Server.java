@@ -178,12 +178,15 @@ public class Server {
     }
     
     public static String showResult(List<Quiz> questions, String MASV) throws ClassNotFoundException, SQLException{
-        String result="";
+        String result="CAU TRA LOI - DAP AN:\n";
         int numOfCorrectAns = 0;
         float scorePerRightAns = (float) Math.round(10.0 / questions.size());
+        int index  = 0;
         for (Quiz question : questions) {
             if(question.getAnsRight().equalsIgnoreCase(question.getAnsUser()))
                 numOfCorrectAns++;
+            index++;
+            result +=  index+ ". " + question.getAnsUser() + " - " + question.getAnsRight() + "\n";
         }
         float score = Math.round(scorePerRightAns * numOfCorrectAns);
         int lan = getSoLanDaThi(MASV);
